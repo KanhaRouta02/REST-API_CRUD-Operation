@@ -1,6 +1,5 @@
 package in.kanha.restcontroller;// src/test/java/in/kanha/restcontroller/PhoneRestControollerTest.java
-java
-package in.kanha.restcontroller;
+
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
