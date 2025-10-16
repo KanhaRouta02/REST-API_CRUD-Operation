@@ -1,8 +1,9 @@
-// src/test/java/in/kanha/restcontroller/PhoneRestControollerTest.java
+package in.kanha.restcontroller;// src/test/java/in/kanha/restcontroller/PhoneRestControollerTest.java
+java
 package in.kanha.restcontroller;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -92,10 +93,10 @@ class PhoneRestControollerTest {
     @Test
     @DisplayName("DELETE /crud/delete/{id} returns NO_CONTENT")
     void deleteById() throws Exception {
-        doNothing().when(service).deleteById(3);
-
         mvc.perform(delete("/crud/delete/3"))
             .andExpect(status().isNoContent());
+
+        verify(service).deleteById(3);
     }
 
     @Test
